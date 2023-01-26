@@ -1,0 +1,109 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #dccfcf;
+}
+
+button {
+    background: whitesmoke;
+    color: black;
+    padding: .5rem;
+    font-size: 1.2rem;
+    box-shadow: .125rem .125rem 0 inset black, -.125rem -.125rem 0 inset black;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:active {
+    scale: .98;
+}
+
+button:hover {
+    background: black;
+    color: white;
+    box-shadow: 0 0 .3rem rgba(0, 0, 0, .7),
+        .125rem .125rem 0 inset whitesmoke,
+        -.125rem -.125rem 0 inset whitesmoke;
+}
+
+#modal {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    width: 18rem;
+    transform: translate(-50%, -50%);
+    height: 15rem;
+    border: .125rem solid black;
+    border-radius: .5rem;
+    box-shadow: 0 0 .25rem rgba(0, 0, 0, .7);
+    z-index: 2;
+    background-color: azure;
+    display: none;
+}
+
+#modal.open {
+    display: flex;
+    flex-direction: column;
+}
+
+section {
+    padding: .2rem .4rem;
+    font-size: 1.25rem;
+}
+
+#modal button,
+#modal button:hover {
+    background: none;
+    box-shadow: none;
+    font-size: 1.5rem;
+    color: black;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h2 {
+    margin-left: .5rem;
+}
+
+#overlay {
+    position: absolute;
+    display: none;
+    background-color: rgba(0, 0, 0, .3);
+    z-index: 1;
+}
+
+#overlay.open {
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+
+hr {
+    height: .1rem;
+    background-color: black;
+    border: none;
+}
+
+::selection {
+    background-color: black;
+    color: whitesmoke;
+}
+
+#demo {
+    position: absolute;
+    top: 5%;
+    left: 10%;
+}
