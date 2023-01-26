@@ -3,6 +3,7 @@ const closeModal = document.querySelector("#modal button");
 const openModal = document.querySelector("#open");
 const overlay = document.querySelector("#overlay");
 const demo = document.querySelector("#demo");
+const body = document.querySelector("body");
 
 openModal.addEventListener("click", () => {
   gsap.fromTo(openModal, 0.3, { scale: 1 }, { scale: 0 });
@@ -22,4 +23,11 @@ closeModal.addEventListener("click", () => {
     overlay.classList.remove("open");
     demo.innerHTML = "can click";
   }, 350);
+});
+
+body.addEventListener("keyup", (e) => {
+  if (e.key === "Escape") {
+    if (modal.classList.contains("open")) closeModal.click();
+    else return;
+  }
 });
